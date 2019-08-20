@@ -1,15 +1,16 @@
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import tensorflow as tf 
 from model_aon import inference, get_train_op, get_init_op
 from input_data import get_batch_data
-import os
 import numpy as np
 
 flags = tf.app.flags
 flags.DEFINE_string('exp_dir', 'exp_log', 'experiment model save directory')
 flags.DEFINE_integer('batch_size', 32, 'define train batch size')
-flags.DEFINE_integer('max_steps', 2000000, 'step nums for training')
+flags.DEFINE_integer('max_steps', 2500, 'step nums for training')
 flags.DEFINE_boolean('restore', True, 'restore model parameter from checkpoint file')
-flags.DEFINE_string('tfrecord_file_path', '/share/zhui/mnt/train.tfrecord', 'tfrecord file path')
+flags.DEFINE_string('tfrecord_file_path', './data/0717/pricetag_train.tfrecord', 'tfrecord file path')
 flags.DEFINE_boolean('single_seq', False, 'Use FG or not')
 FLAGS = flags.FLAGS
 

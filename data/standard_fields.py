@@ -21,5 +21,6 @@ class TfExampleFields:
     width = 'image/width'
     source_id = 'image/source_id'
     transcript = 'image/transcript'
+    transcript2 = 'image/transcript2'
     lexicon = 'image/lexicon'
     keypoints = 'image/keypoints'

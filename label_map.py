@@ -6,9 +6,16 @@ class LabelMap(object):
                character_set=None,
                label_offset=2,
                ignore_case=True,
-               unk_label=None):
+               unk_label=None,
+               nopoint=False):
     if character_set is None:
-        character_set = list('abcdefghijklmnopqrstuvwxyz1234567890')
+        if nopoint:
+          character_set = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+          print("use nopint, dict is: {}".format(character_set))
+        else:
+          character_set = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']
+          print("use withpoint, dict is: {}".format(character_set))
+        # character_set = list('abcdefghijklmnopqrstuvwxyz1234567890')
     if not isinstance(character_set, list):
       raise ValueError('character_set must be provided as a list')
     if len(frozenset(character_set)) != len(character_set):

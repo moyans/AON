@@ -2,6 +2,7 @@ __pycache__/*
 exp_log/*
 data/*.tfrecord
 data/__pycache__/*
+data/0717/*
 backup/*
 back/*
 model/*
